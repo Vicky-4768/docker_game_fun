@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  mysql:
+    build:
+      context: ./sup_sql
+    image: my-mysql-image
+    container_name: my-mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydatabase
+    ports:
+      - "3306:3306"
+    networks:
+      - my_net
+
+  app:
+    build:
+      context: ./Simple_Number_Game
+    image: simple_number_game
+    container_name: simple_number_game_container
+    environment:
+      FLASK_APP: app.py
+      FLASK_RUN_HOST: 0.0.0.0
+      FLASK_ENV: production
+      MYSQL_HOST: mysql  # This should be the service name of the MySQL container
+      MYSQL_PORT: 3306
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_DB: mydatabase
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+    networks:
+      - my_net
+
+networks:
+  my_net:
+    driver: bridge
+

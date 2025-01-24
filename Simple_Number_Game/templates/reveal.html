@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reveal Page</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #FF8C00;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #FF8C00;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            margin-top: 50px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #FF8C00;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 30px;
+            display: block;
+        }
+
+        a:hover {
+            color: #FF6347;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reveal the Correct Number</h1>
+    <p>The correct number is: {{ correct_number }}</p>
+    <a href="{{ url_for('game') }}">Back to Game</a>
+</body>
+</html>
+

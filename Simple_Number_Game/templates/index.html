@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask MySQL Project</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #FF8C00;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #FF8C00;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            margin-top: 50px;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        input[type="text"], input[type="number"], input[type="email"] {
+            padding: 15px;
+            font-size: 18px;
+            width: 300px;
+            border-radius: 30px;
+            border: 2px solid #FF8C00;
+            background-color: #444;
+            color: #FF8C00;
+            margin-top: 20px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus {
+            border-color: #FF6347;
+            background-color: #555;
+        }
+
+        input[type="submit"] {
+            padding: 15px 25px;
+            font-size: 18px;
+            color: white;
+            background-color: #FF8C00;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FF6347;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #444;
+            margin: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        a {
+            color: #FF8C00;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 30px;
+            display: block;
+        }
+
+        a:hover {
+            color: #FF6347;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Your Data</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <input type="number" name="age" placeholder="Enter your age" required>
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="text" name="city" placeholder="Enter your city">
+        <input type="text" name="data" placeholder="Enter some data" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Stored Data</h2>
+    <ul>
+        {% for data in data_list %}
+        <li>Name: {{ data[0] }} | Age: {{ data[1] }} | Email: {{ data[2] }} | City: {{ data[3] }} | Data: {{ data[4] }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('game') }}">Go to Game Page</a>
+</body>
+</html>
+

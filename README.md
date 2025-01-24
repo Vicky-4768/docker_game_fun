@@ -12,7 +12,7 @@ This is a simple web application for playing a number guessing game. The applica
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/Vicky-4768/docker-game-proj.git 
+   git clone https://github.com/Vicky-4768/docker_game_fun.git
    cd docker-game-proj
    ```
 

@@ -13,7 +13,7 @@ This is a simple web application for playing a number guessing game. The applica
 
    ```sh
    git clone https://github.com/Vicky-4768/docker_game_fun.git
-   cd docker-game-proj
+   cd docker_game_fun
    ```
 
 2. Build and run the Docker containers:
